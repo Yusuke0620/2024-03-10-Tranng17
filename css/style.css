@@ -1,0 +1,96 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Meiryo";
+  color: #000000;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 横幅を設定するための共通クラス */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* /ここまで共通設定 */
+/*-------------------------------------------
+#header
+-------------------------------------------*/
+#header {
+  margin-top: 100px;
+}
+#header h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*-------------------------------------------
+main
+-------------------------------------------*/
+main {
+  display: flex;
+  margin: 85px 0 110px;
+}
+main .flex-left {
+  width: 40%;
+}
+main .flex-right {
+  width: 60%;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+main .flex-right li {
+  width: 33.3333333333%;
+  padding-left: 12px;
+}
+
+/* レスポンシブ・ブレークポイント900px
+------------------------------- */
+@media screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  main .flex-left {
+    width: 100%;
+  }
+  main .flex-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  main .flex-right li {
+    width: 50%;
+    padding-top: 12px;
+    padding-left: 0;
+  }
+  main .flex-right li:nth-child(odd) {
+    padding-right: 6px;
+  }
+  main .flex-right li:nth-child(even) {
+    padding-left: 6px;
+  }
+}
+/*-------------------------------------------
+
+-------------------------------------------*/
