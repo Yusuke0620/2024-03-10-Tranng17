@@ -1,0 +1,77 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Meiryo";
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 横幅を設定するための共通クラス */
+body {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+}
+
+/* /ここまで共通設定 */
+.flex-left {
+  width: 40%;
+}
+
+.flex-right {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.flex-right li {
+  width: 33.3333333333%;
+  padding-left: 12px;
+}
+
+/* レスポンシブ・ブレークポイント900px
+------------------------------- */
+@media screen and (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+  .flex-left {
+    width: 100%;
+  }
+  .flex-right {
+    width: 100%;
+  }
+  .flex-right li {
+    padding: 12px 0 0 0;
+    width: 50%;
+  }
+  .flex-right li:nth-child(odd) {
+    padding-right: 6px;
+  }
+  .flex-right li:nth-child(even) {
+    padding-left: 6px;
+  }
+}
+/*-------------------------------------------
+
+-------------------------------------------*/
